@@ -3,4 +3,4 @@ chmod +x dotnet-install.sh
 ./dotnet-install.sh -c 7.0 -InstallDir ./dotnet7 
 ./dotnet7/dotnet --version 
 ./dotnet7/dotnet tool install Excubo.WebCompiler --global
-./dotnet7/dotnet publish ComponentViewer.Wasm/ComponentViewer.Wasm.csproj -c Release -o output
+./dotnet7/dotnet publish MudProjectCountdown/MudProjectCountdown.csproj -c Release -o output
