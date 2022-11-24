@@ -1,0 +1,45 @@
+﻿@page "/"
+@using MudExtensions.Enums
+
+<MudContainer MaxWidth="MaxWidth.Large" Class="d-flex flex-column align-center justify-center" Style="height: 100vh">
+    
+    <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Style="width: 320px; height: 320px; color: orange"></MudIcon>
+    <MudText Class="id1 mb-16" Typo="Typo.h1" Style="color: orange; cursor: default; user-select: none">Prepare Yourself</MudText>
+    <div class="blurred-main d-flex flex-column align-center justify-center">
+        <MudText Class="blurred-visible mb-1" Typo="Typo.h6" Style="color: orange;">for biggest unofficial Mud thing ever</MudText>
+        <MudText Class="id2 blurred" Color="Color.Primary" Typo="Typo.h2" Style="font-weight: 700">Mud<MudText Inline="true" Typo="Typo.h2" Class="blurred-all">What</MudText></MudText>
+    </div>
+    <MudText Class="id2 mb-8" Typo="Typo.h2" Style="cursor: default; user-select: none">2023 / Q1*</MudText>
+    <MudText Class="id2">*Join <MudLink Href="https://discord.com/invite/mudblazor" Target="_blank" Underline="Underline.Hover">MudBlazor Discord channel</MudLink> for follow countdown notification.</MudText>
+</MudContainer>
+
+<MudAnimate Selector=".id1" AnimationType="AnimationType.Fade" Value="1" ValueSecondary="0" Duration="6"></MudAnimate>
+<MudAnimate Selector=".id2" AnimationType="AnimationType.Fade" Value="0" ValueSecondary="1" AnimationDirection="AnimationDirection.Reverse" AnimationFillMode="AnimationFillMode.Both" Duration="6" Delay="3"></MudAnimate>
+
+<style>
+    .blurred-main .blurred {
+        filter: blur(12px);
+        transition: filter 2s ease;
+        cursor: default;
+    }
+
+    .blurred-main .blurred-visible {
+        opacity: 0;
+        transition: opacity 1s ease;
+        font-family: "Caveat";
+    }
+
+    .blurred-main:hover .blurred-visible {
+        opacity: 1;
+    }
+
+    .blurred-main:hover .blurred {
+        filter: blur(0px);
+        cursor: default;
+    }
+
+    .blurred-all {
+        color: orange;
+        filter: blur(12px);
+    }
+</style>
