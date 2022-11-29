@@ -1,45 +1,135 @@
 ﻿@page "/"
 @using MudExtensions.Enums
 
-<MudContainer MaxWidth="MaxWidth.Large" Class="d-flex flex-column align-center justify-center" Style="height: 100vh">
+<MudContainer MaxWidth="MaxWidth.Large" Class="d-flex flex-column align-center justify-center">
     
-    <MudIcon Icon="@Icons.Custom.Brands.MudBlazor" Style="width: 320px; height: 320px; color: orange"></MudIcon>
-    <MudText Class="id1 mb-16" Typo="Typo.h1" Style="color: orange; cursor: default; user-select: none">Prepare Yourself</MudText>
+    <MudIcon Class="mt-4" Icon="@Icons.Custom.Brands.MudBlazor" Style="width: 300px; height: 300px; color: orange"></MudIcon>
+    <MudText Class="id1 mb-4" Typo="Typo.h1" Style="color: var(--mud-palette-tertiary); cursor: default; letter-spacing: -4px; user-select: none">Prepare Yourself</MudText>
+    <MudWatch @ref="_watch" Class="mb-12" Mode="WatchMode.CountDown" CountdownTime="_countDownValue" Color="Color.Info" Typo="Typo.h2" ShowDay="true" ShowMillisecond="false" />
     <div class="blurred-main d-flex flex-column align-center justify-center">
-        <MudText Class="blurred-visible mb-1" Typo="Typo.h6" Style="color: orange;">for biggest unofficial Mud thing ever</MudText>
+        <MudText Class="blurred-visible mb-1" Typo="Typo.h6" Style="color: var(--mud-palette-tertiary);">the biggest unofficial Mud thing ever</MudText>
         <MudText Class="id2 blurred" Color="Color.Primary" Typo="Typo.h2" Style="font-weight: 700">Mud<MudText Inline="true" Typo="Typo.h2" Class="blurred-all">What</MudText></MudText>
     </div>
-    <MudText Class="id2 mb-8" Typo="Typo.h2" Style="cursor: default; user-select: none">2023 / Q1*</MudText>
+    <MudText Class="id2 mb-8" Color="Color.Tertiary" Typo="Typo.h2" Style="cursor: default; letter-spacing: -6px; user-select: none">2023 / Q1*</MudText>
     <MudText Class="id2">*Join <MudLink Href="https://discord.com/invite/mudblazor" Target="_blank" Underline="Underline.Hover">MudBlazor Discord channel</MudLink> for follow countdown notification.</MudText>
+    <MudTimeline>
+        <MudTimelineItem Color="Color.Info" Size="Size.Medium">
+            <ItemDot>
+                <MudIcon Class="white-text" Icon="@Icons.Filled.Done" Color="Color.Info" />
+            </ItemDot>
+            <ItemOpposite>
+                <MudText Color="Color.Info" Typo="Typo.h5">29.11.2022</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Alpha 1</MudText>
+                <MudText Color="Color.Tertiary">0.5.5</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Class="d-flex align-center" Color="Color.Tertiary" Icon="@Icons.Filled.Done" Size="Size.Medium">
+            <ItemOpposite>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Alpha 2</MudText>
+                <MudText Color="Color.Tertiary">0.7.0</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <div class="d-flex align-center">
+                    <MudText Color="Color.Tertiary" Typo="Typo.h5">20.12.2022</MudText>
+                </div>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Color="Color.Tertiary" Icon="@Icons.Filled.Done" Size="Size.Small">
+            <ItemOpposite>
+                <MudText Color="Color.Tertiary" Typo="Typo.h5">10.01.2023</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Beta 1</MudText>
+                <MudText Color="Color.Tertiary">0.7.5</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Class="d-flex align-center" Color="Color.Tertiary" Icon="@Icons.Filled.Done" Size="Size.Small">
+            <ItemOpposite>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">Beta 2</MudText>
+                <MudText Color="Color.Tertiary">0.8.0</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <div class="d-flex align-center">
+                    <MudText Color="Color.Tertiary" Typo="Typo.h5">12.02.2023</MudText>
+                </div>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Color="Color.Tertiary" Icon="@Icons.Filled.Done" Size="Size.Small">
+            <ItemOpposite>
+                <MudText Color="Color.Tertiary" Typo="Typo.h5">26.02.2023</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">RC-1</MudText>
+                <MudText Color="Color.Tertiary">0.9.0</MudText>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Class="d-flex align-center" Color="Color.Tertiary" Icon="@Icons.Filled.Done" Size="Size.Small">
+            <ItemOpposite>
+                <MudText Color="Color.Info" Typo="Typo.h6" GutterBottom="true">RC-2</MudText>
+                <MudText Color="Color.Tertiary">0.9.1</MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <div class="d-flex align-center">
+                    <MudText Color="Color.Tertiary" Typo="Typo.h5">12.03.2023</MudText>
+                </div>
+            </ItemContent>
+        </MudTimelineItem>
+        <MudTimelineItem Color="Color.Info" Icon="@Icons.Filled.Done" Size="Size.Medium">
+            <ItemOpposite>
+                <MudText Color="Color.Info" Typo="Typo.h5"><b>26.03.2023</b></MudText>
+            </ItemOpposite>
+            <ItemContent>
+                <MudText Color="Color.Info" Typo="Typo.h5" GutterBottom="true"><b>Release</b></MudText>
+                <MudText Color="Color.Tertiary"><b>7.0.0</b></MudText>
+            </ItemContent>
+        </MudTimelineItem>
+    </MudTimeline>
 </MudContainer>
 
 <MudAnimate Selector=".id1" AnimationType="AnimationType.Fade" Value="1" ValueSecondary="0" Duration="6"></MudAnimate>
 <MudAnimate Selector=".id2" AnimationType="AnimationType.Fade" Value="0" ValueSecondary="1" AnimationDirection="AnimationDirection.Reverse" AnimationFillMode="AnimationFillMode.Both" Duration="6" Delay="3"></MudAnimate>
 
+@code{
+    MudWatch _watch;
+    TimeSpan _countDownValue = new DateTime(2023, 3, 26, 10, 0, 0) - DateTime.Now;
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        await base.OnAfterRenderAsync(firstRender);
+        if (firstRender)
+        {
+            _watch.Start();
+            StateHasChanged();
+        }
+    }
+}
+
 <style>
     .blurred-main .blurred {
-        filter: blur(12px);
+        filter: blur(0px);
         transition: filter 2s ease;
         cursor: default;
     }
 
     .blurred-main .blurred-visible {
-        opacity: 0;
+        opacity: 1;
         transition: opacity 1s ease;
         font-family: "Caveat";
     }
 
     .blurred-main:hover .blurred-visible {
-        opacity: 1;
+        opacity: 0;
     }
 
     .blurred-main:hover .blurred {
-        filter: blur(0px);
+        filter: blur(12px);
         cursor: default;
     }
 
     .blurred-all {
-        color: orange;
+        color: var(--mud-palette-tertiary);
         filter: blur(12px);
     }
 </style>

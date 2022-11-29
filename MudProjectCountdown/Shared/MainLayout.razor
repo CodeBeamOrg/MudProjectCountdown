@@ -2,6 +2,20 @@
 
 @Body
 
-<MudThemeProvider />
+<MudThemeProvider Theme="_theme" />
 <MudDialogProvider />
 <MudSnackbarProvider />
+
+
+@code {
+
+    MudTheme _theme = new MudTheme()
+        {
+            Palette = new Palette()
+            {
+                Tertiary = "FF8C42",
+                TertiaryContrastText = "FFFFFF",
+            },
+        };
+
+}
